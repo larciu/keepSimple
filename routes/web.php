@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [DicaController::class, 'index']);
+Route::get('/filter', [DicaController::class, 'filter']);
