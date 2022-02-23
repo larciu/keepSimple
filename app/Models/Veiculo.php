@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Veiculo extends Model
 {
     use HasFactory;
+    protected $table = "veiculo";
+
+    public function dica () {
+        return $this->hasMany(Dica::class);
+    }
 }
