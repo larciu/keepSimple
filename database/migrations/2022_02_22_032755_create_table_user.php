@@ -18,8 +18,8 @@ class CreateTableUser extends Migration
                 $table->id();
                 $table->string('name');
                 $table->string('password');
-                $table->string('login');
-                $table->boolean('active');
+                $table->string('login')->unique();
+                $table->boolean('active')->default(1);
                 $table->timestamps();
             });
         }
