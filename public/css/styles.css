@@ -15,6 +15,23 @@
   width: 250px;
 }
 
+.card-header-dark{
+    background-color: #000;
+    color: #fff;
+}
+
+.card-body-custom label{
+    margin-right:  2rem;
+    width: 55px;
+}
+
+.card-centralizado{
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+    margin-top: 5rem;
+}
+
 .select-form{
     margin-left: auto;
     width: 250px;
