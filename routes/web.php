@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [DicaController::class, 'index']);
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'login']);
+Route::get('/sair', [LoginController::class, 'sair']);
 Route::get('/filter', [DicaController::class, 'filter']);
 Route::get('/cadastro-usuario', [UserController::class, 'signUpGet']);
 Route::post('/cadastro-usuario', [UserController::class, 'signUpPost']);

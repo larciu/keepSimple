@@ -2,37 +2,41 @@
     justify-content: center;
 }
 
-.page-item.active .page-link{
+.page-item.active .page-link {
     background-color: #000;
     border-color: #000;
 }
 
-.page-link{
+.page-link {
     color: #000
 }
 
-.w-250px{
-  width: 250px;
+.w-250px {
+    width: 250px;
 }
 
-.card-header-dark{
+.me-6 {
+    margin-right: 6rem;
+}
+
+.card-header-dark {
     background-color: #000;
     color: #fff;
 }
 
-.card-body-custom label{
-    margin-right:  2rem;
+.card-body-custom label {
+    margin-right: 2rem;
     width: 55px;
 }
 
-.card-centralizado{
+.card-centralizado {
     margin-right: auto;
     margin-left: auto;
     width: 50%;
     margin-top: 5rem;
 }
 
-.select-form{
+.select-form {
     margin-left: auto;
     width: 250px;
     margin-right: 0.5rem;

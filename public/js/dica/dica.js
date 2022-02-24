@@ -1,12 +1,12 @@
-$('#excluir-dica').click(async function (e) {
+$('#excluir-dica').click(async function(e) {
     e.preventDefault();
-   let result =  await Swal.fire({
+    let result = await Swal.fire({
         title: 'Tem certeza que deseja excluir?',
         showCancelButton: true,
         confirmButtonText: 'Sim',
-      });
+    });
 
-      if (result.isConfirmed){
+    if (result.isConfirmed) {
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -16,13 +16,13 @@ $('#excluir-dica').click(async function (e) {
         $.ajax({
             type: 'DELETE',
             url: $(this).attr('href'),
-            success: () =>{
-                window.location.href="";
+            success: () => {
+                window.location.href = "";
             },
 
-            error: (error) =>  {
+            error: (error) => {
                 console.log(error);
             }
         })
-      }
+    }
 })

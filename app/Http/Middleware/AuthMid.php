@@ -18,7 +18,7 @@ class AuthMid
     public function handle(Request $request, Closure $next)
     {
         $user = Session::get('user');
-        if (!$user){
+        if (!$user) {
             return redirect('/login');
         }
         return $next($request);

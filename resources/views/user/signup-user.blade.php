@@ -9,7 +9,7 @@
                     <label class="control-label">Nome:</label>
                     <input class="form-control" name="name" value="{{ old('name') }}">
                     @error('name')
-                        <p class="text-danger">{{$message}}</p>
+                        <p class="text-danger">{{ $message }}</p>
                     @enderror
                 </div>
             </div>
@@ -19,8 +19,8 @@
                     <label class="control-label">Login:</label>
                     <input class="form-control" name="login" value="{{ old('login') }}">
                     @error('login')
-                    <p class="text-danger">{{$message}}</p>
-                @enderror
+                        <p class="text-danger">{{ $message }}</p>
+                    @enderror
                 </div>
             </div>
 
@@ -30,8 +30,8 @@
                     <label class="control-label">Senha:</label>
                     <input type="password" class="form-control" name="password" value="">
                     @error('password')
-                    <p class="text-danger">{{$message}}</p>
-                @enderror
+                        <p class="text-danger">{{ $message }}</p>
+                    @enderror
                 </div>
             </div>
 
@@ -40,8 +40,8 @@
                     <label class="control-label">Confirmar senha:</label>
                     <input type="password" class="form-control" name="password_confirmation" value="">
                     @error('password_confirmation')
-                    <p class="text-danger">{{$message}}</p>
-                @enderror
+                        <p class="text-danger">{{ $message }}</p>
+                    @enderror
                 </div>
             </div>
 

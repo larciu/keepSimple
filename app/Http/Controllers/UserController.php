@@ -10,15 +10,17 @@ use Illuminate\Validation\ValidationException;
 
 class UserController extends Controller
 {
-    public function signUpGet () {
+    public function signUpGet()
+    {
         return view('user.signup-user');
     }
 
-    public function signUpPost (Request $request) {
+    public function signUpPost(Request $request)
+    {
         $validation = $this->validationUser($request->all());
 
-        if ($validation->fails()){
-             throw ValidationException::withMessages($validation->errors()->messages());
+        if ($validation->fails()) {
+            throw ValidationException::withMessages($validation->errors()->messages());
         }
 
         $user = User::create([
@@ -31,10 +33,10 @@ class UserController extends Controller
         Session::put('user', $user);
 
         return redirect('/');
-
     }
 
-    private function validationUser ($data) {
+    private function validationUser($data)
+    {
         return Validator::make($data, [
             'name' => 'required|max:255',
             'login' => 'required|unique:user|max:255',

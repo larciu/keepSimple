@@ -9,7 +9,7 @@
                     <label class="control-label">Marca:</label>
                     <input class="form-control" name="marca" value="{{ old('marca') }}">
                     @error('marca')
-                        <p class="text-danger">{{$message}}</p>
+                        <p class="text-danger">{{ $message }}</p>
                     @enderror
                 </div>
             </div>
@@ -19,8 +19,8 @@
                     <label class="control-label">Modelo:</label>
                     <input class="form-control" name="modelo" value="{{ old('modelo') }}">
                     @error('modelo')
-                    <p class="text-danger">{{$message}}</p>
-                @enderror
+                        <p class="text-danger">{{ $message }}</p>
+                    @enderror
                 </div>
             </div>
 
@@ -30,8 +30,8 @@
                     <label class="control-label">Versão:</label>
                     <input class="form-control" name="versao" value="{{ old('versao') }}">
                     @error('versao')
-                    <p class="text-danger">{{$message}}</p>
-                @enderror
+                        <p class="text-danger">{{ $message }}</p>
+                    @enderror
                 </div>
             </div>
 
@@ -45,8 +45,8 @@
                         <option value="Moto">Moto</option>
                     </select>
                     @error('tipo')
-                    <p class="text-danger">{{$message}}</p>
-                @enderror
+                        <p class="text-danger">{{ $message }}</p>
+                    @enderror
                 </div>
             </div>
 

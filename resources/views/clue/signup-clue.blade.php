@@ -9,7 +9,7 @@
                     <label class="control-label">Descrição:</label>
                     <textarea class="form-control" name="descricao">{{ old('descricao') }}</textarea>
                     @error('descricao')
-                        <p class="text-danger">{{$message}}</p>
+                        <p class="text-danger">{{ $message }}</p>
                     @enderror
                 </div>
             </div>
@@ -19,13 +19,13 @@
                     <label class="control-label">Veículo:</label>
                     <select class="form-control" name="veiculo_id">
                         <option value="">Selecione o veículo</option>
-                        @foreach($veiculos as $veiculo)
-                            <option value="{{$veiculo->id}}">{{$veiculo->marca}}</option>
+                        @foreach ($veiculos as $veiculo)
+                            <option value="{{ $veiculo->id }}">{{ $veiculo->marca }}</option>
                         @endforeach
                     </select>
                     @error('veiculo_id')
-                    <p class="text-danger">{{$message}}</p>
-                @enderror
+                        <p class="text-danger">{{ $message }}</p>
+                    @enderror
                 </div>
             </div>
 

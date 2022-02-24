@@ -11,19 +11,21 @@ use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
-    public function index () {
+    public function index()
+    {
         return view('login');
     }
 
-    public function login (Request $request){
+    public function login(Request $request)
+    {
         $validation = $this->validationLogin($request->all());
 
-        if ($validation->fails()){
+        if ($validation->fails()) {
             throw ValidationException::withMessages($validation->errors()->messages());
         }
 
         $user = User::where('login', $request['login'])
-                    ->first();
+            ->first();
 
         if (!$user) {
             throw ValidationException::withMessages([
@@ -31,7 +33,7 @@ class LoginController extends Controller
             ]);
         }
 
-        if (!Hash::check($request['password'], $user->password)){
+        if (!Hash::check($request['password'], $user->password)) {
             throw ValidationException::withMessages([
                 'password' => 'Senha inválida'
             ]);
@@ -43,13 +45,22 @@ class LoginController extends Controller
         return redirect('/');
     }
 
-    private function validationLogin ($data) {
+    private function validationLogin($data)
+    {
         return Validator::make($data, [
             'login' => 'required',
             'password' => 'required'
-        ],[
+        ], [
             'login.required' => 'Campo obrigatório',
             'password.required' => 'Campo obrigatório'
         ]);
+    }
+
+    public function sair()
+    {
+        Session::remove('user');
+        Session::remove('id');
+
+        return redirect('/login');
     }
 }

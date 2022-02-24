@@ -11,15 +11,17 @@ use Illuminate\Validation\ValidationException;
 
 class VeiculoController extends Controller
 {
-    public function signUpGet () {
+    public function signUpGet()
+    {
         return view('vehicle.signup-vehicle');
     }
 
-    public function signUpPost (Request $request) {
+    public function signUpPost(Request $request)
+    {
         $validation = $this->validationUser($request->all());
 
-        if ($validation->fails()){
-             throw ValidationException::withMessages($validation->errors()->messages());
+        if ($validation->fails()) {
+            throw ValidationException::withMessages($validation->errors()->messages());
         }
 
         Veiculo::create([
@@ -30,10 +32,10 @@ class VeiculoController extends Controller
         ]);
 
         return redirect('/');
-
     }
 
-    private function validationUser ($data) {
+    private function validationUser($data)
+    {
         return Validator::make($data, [
             'marca' => 'required|max:255',
             'tipo' => 'required|max:255',

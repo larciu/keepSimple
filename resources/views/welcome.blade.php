@@ -4,21 +4,21 @@
     <div class="container">
         <div class="row">
             <form method="get" action="/filter">
-            <div class="col-sm-12 mb-3 mt-3 d-flex justify-content-between">
-                <select name="coluna" class="select-form">
-                    <option value="marca">Marca</option>
-                    <option value="tipo">Tipo</option>
-                    <option value="modelo">Modelo</option>
-                    <option value="versao">Versão</option>
-                </select>
-                <div class="form-group d-flex float-end w-250px">
-                    <button type="submit" class="btn btn-dark rounded-0">
-                        <i class="fas fa-search"></i>
-                    </button>
-                    <input required placeholder="Pesquisar" name="pesquisar" class="form-control rounded-0">
+                <div class="col-sm-12 mb-3 mt-3 d-flex justify-content-between">
+                    <select name="coluna" class="select-form">
+                        <option value="marca">Marca</option>
+                        <option value="tipo">Tipo</option>
+                        <option value="modelo">Modelo</option>
+                        <option value="versao">Versão</option>
+                    </select>
+                    <div class="form-group d-flex float-end w-250px">
+                        <button type="submit" class="btn btn-dark rounded-0">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <input required placeholder="Pesquisar" name="pesquisar" class="form-control rounded-0">
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
         </div>
 
         <div class="row">
@@ -51,7 +51,7 @@
 
         <div class="row">
             <div class="col-sm-12">
-                {{$dicas->links()}}
+                {{ $dicas->links() }}
             </div>
         </div>
     </div>
