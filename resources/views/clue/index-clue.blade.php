@@ -47,7 +47,7 @@
                                 <td>
                                     <a href="/editar-dica/{{ $dica->id }}" class="btn btn-success"><i
                                             class="fa-solid fa-pencil"></i></a>
-                                    <a id="excluir-dica" href="/deletar-dica/{{ $dica->id }}" class="btn btn-danger"><i
+                                    <a  href="/deletar-dica/{{ $dica->id }}" class="btn excluir-dica btn-danger"><i
                                             class="fa-solid fa-trash"></i></a>
                                 </td>
                             </tr>

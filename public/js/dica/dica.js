@@ -1,4 +1,4 @@
-$('#excluir-dica').click(async function(e) {
+$('.excluir-dica').click(async function(e) {
     e.preventDefault();
     let result = await Swal.fire({
         title: 'Tem certeza que deseja excluir?',
