@@ -18,6 +18,13 @@ class DicaController extends Controller
         return view('welcome', compact('dicas'));
     }
 
+    public function indexAuth()
+    {   $user_id = Session::get('id');
+        $dicas = Dica::orderByDesc('created_at')->where('user_id', $user_id)
+        ->paginate($this->perPage);
+        return view('clue.index-clue', compact('dicas'));
+    }
+
     public function filter(Request $request)
     {
         $dicas = Dica::orderByDesc('created_at')
@@ -74,6 +81,11 @@ class DicaController extends Controller
         ]);
 
         return redirect('/');
+    }
+
+    public function deleteClue ($id){
+        Dica::where('id', $id)
+        ->delete();
     }
 
     private function validationClue($data)

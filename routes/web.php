@@ -23,9 +23,14 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::get('/filter', [DicaController::class, 'filter']);
 Route::get('/cadastro-usuario', [UserController::class, 'signUpGet']);
 Route::post('/cadastro-usuario', [UserController::class, 'signUpPost']);
-Route::get('/cadastro-veiculo', [VeiculoController::class, 'signUpGet']);
-Route::post('/cadastro-veiculo', [VeiculoController::class, 'signUpPost']);
-Route::get('/cadastro-dica', [DicaController::class, 'signUpGet']);
-Route::post('/cadastro-dica', [DicaController::class, 'signUpPost']);
-Route::get('/editar-dica/{edit}', [DicaController::class, 'editUpGet']);
-Route::put('/editar-dica/{edit}', [DicaController::class, 'editUpUpdate']);
+
+Route::group(['middleware' => 'authenticated', 'prefix' => ''], function () {
+    Route::get('/home', [DicaController::class, 'indexAuth']);
+    Route::get('/cadastro-veiculo', [VeiculoController::class, 'signUpGet']);
+    Route::post('/cadastro-veiculo', [VeiculoController::class, 'signUpPost']);
+    Route::get('/cadastro-dica', [DicaController::class, 'signUpGet']);
+    Route::post('/cadastro-dica', [DicaController::class, 'signUpPost']);
+    Route::get('/editar-dica/{edit}', [DicaController::class, 'editUpGet']);
+    Route::put('/editar-dica/{edit}', [DicaController::class, 'editUpUpdate']);
+    Route::delete('/deletar-dica/{edit}', [DicaController::class, 'deleteClue']);
+});
