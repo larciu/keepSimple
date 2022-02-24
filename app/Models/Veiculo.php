@@ -9,6 +9,7 @@ class Veiculo extends Model
 {
     use HasFactory;
     protected $table = "veiculo";
+    protected $fillable = ['marca', 'tipo', 'modelo', 'versao'];
 
     public function dica () {
         return $this->hasMany(Dica::class);

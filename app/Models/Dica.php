@@ -9,6 +9,7 @@ class Dica extends Model
 {
     use HasFactory;
     protected $table = "dica";
+    protected $fillable = ['veiculo_id', 'user_id', 'descricao'];
 
     public function user() {
         return $this->belongsTo(User::class);
